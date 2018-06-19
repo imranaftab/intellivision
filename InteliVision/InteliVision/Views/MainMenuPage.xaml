@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InteliVision.Views.MainMenuPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" x:Name="btnText"        Text="Textual"   BackgroundColor="{StaticResource PrimaryDark}"    TextColor="{StaticResource LightBackgroundColor}" FontSize="Large" Margin="20,30"   Clicked="btnText_Clicked"></Button>
+            <Button Grid.Row="1" x:Name="btnCurrency"    Text="Currency"  BackgroundColor="{StaticResource PrimaryDark}"    TextColor="{StaticResource LightBackgroundColor}" FontSize="Large" Margin="20"      Clicked="btnCurrency_Clicked"></Button>
+            <Button Grid.Row="2" x:Name="btnObject"      Text="Object"    BackgroundColor="{StaticResource PrimaryDark}"    TextColor="{StaticResource LightBackgroundColor}" FontSize="Large" Margin="20"      Clicked="btnObject_Clicked"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

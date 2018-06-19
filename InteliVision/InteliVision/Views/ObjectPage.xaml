@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InteliVision.Views.ObjectPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Margin="0,10,0,0" Text="Take Photo" Command="{Binding TakePhotoCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                    <Button Margin="0,10,0,0" Text="Upload Image" Command="{Binding UploadImageCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" >
+                <ActivityIndicator IsRunning="{Binding IsProcessing}" IsVisible="{Binding IsProcessing}"></ActivityIndicator>
+                <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
+                    <Image.Source>
+                        <FileImageSource File="{Binding MyImage}" />
+                    </Image.Source>
+                </Image>
+            </StackLayout>
+            <ListView Grid.Row="2" x:Name="lstObjects" ItemsSource="{Binding ObjectsInImg}" SelectedItem="{Binding SelectedTag}"></ListView>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
